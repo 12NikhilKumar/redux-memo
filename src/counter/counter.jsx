@@ -40,5 +40,11 @@ const Counter = ()=>{
         </>
     )
 };
-React.memo(Counter)
+const areEqual = (prev,next) =>{
+    if(prev.status === next.status){
+        return true;
+    }
+    return false;
+}
+export const MemoizedCounter =  React.memo(Counter,areEqual)
 export default Counter
