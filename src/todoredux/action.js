@@ -1,12 +1,19 @@
 export const actionConstants = {
+    ADD_TODO_REQUEST: 'GET_TODO_REQUEST',
     ADD_TODO: 'ADD_TODO',
     EDIT_TODO: 'EDIT_TODO',
     DELETE_TODO: 'DELETE_TODO'
 }
-export const addTodo = ({data}) => ({
+export const addTodoRequest = ()=> ({
+    type: actionConstants.ADD_TODO_REQUEST,
+    payload: {
+        isLoading: true
+    }
+})
+export const addTodo = (data) => ({
     type: actionConstants.ADD_TODO,
     payload: {
-        data
+        data : data
     }
 })
 export const editTodo = (id) => ({
